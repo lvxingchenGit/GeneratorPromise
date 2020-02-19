@@ -60,7 +60,9 @@ new GeneratorPromise().init()
 /**
  * 调用
  *
-    readFile('./1/1.txt').then((res) => {
+ *
+   const { readFile } = requrie('commonModule.js')
+    readFile('./https/https.txt').then((res) => {
         console.log(res)
     })
  *
