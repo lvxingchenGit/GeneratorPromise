@@ -50,7 +50,7 @@ class GeneratorPromise{
         if(newFilePath){
             return [path.resolve(path.resolve(), mypath), path.resolve(path.resolve(), newFilePath)]
         }else{
-            return path.resolve(path.resolve(), mypath)
+            return path.resolve(path.resolve(), mypath) // path.resolve() 路径拼接时，极易出现问题，后边如果可以拼接成一个绝对路径，那么path.resolve()就没有了
         }
     }
 }
