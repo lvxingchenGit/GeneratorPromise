@@ -39,7 +39,12 @@ class GeneratorPromise{
                 resolve(res || '')
             }
             this.box = []
-            item === 'readFile' ? this.box.push('utf-8') : null
+            if(item === 'readFile') {
+                if(!/(\.jpg|\.png|\.ico|\.gif)$/ig.test(PATH)) {
+                    this.box.push('utf-8')
+                }
+            }
+            // item === 'readFile' ? this.box.push('utf-8') : null
             if( item === 'copyFile' || item === 'appendFile' || item === 'writeFile' ){
                 this.box.push(powerfulParam)
             }
